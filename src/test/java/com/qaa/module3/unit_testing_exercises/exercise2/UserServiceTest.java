@@ -11,6 +11,11 @@ public class UserServiceTest {
 	
 	private UserService service;
 
+	/*
+	Junit is not invoking the setUp and tearDown methods, so as a workaround
+	they are currently invoked manually at the start/end of each test.
+	*/
+
 	@BeforeEach
 	public void setUp() throws Exception {
 		service = new UserService();
@@ -22,7 +27,8 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void registerValidDetails() {
+	public void testRegisterValidDetails() {
+		setUp();
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -32,10 +38,12 @@ public class UserServiceTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
+		tearDown();
 	}
 
 	@Test
-	public void registerInvalidPasswordNoNumbers() {
+	public void testRegisterInvalidPasswordNoNumbers() {
+		setUp();
 		// Arrange
 		String username = "bobby", password = "CodesAlot";
 		String expected = "Password must contain at least 1 number character";
@@ -48,10 +56,12 @@ public class UserServiceTest {
 			// Assert
 			Assertions.assertEquals(expected, iae.getMessage());
 		}
+		tearDown();
 	}
 	
 	@Test
-	public void registerInvalidPasswordNoUppercaseLetter() {
+	public void testRegisterInvalidPasswordNoUppercaseLetter() {
+		setUp();
 		// Arrange
 		String username = "bobby", password = "codes123";
 		String expected = "Password must contain at least 1 uppercase character";
@@ -63,10 +73,12 @@ public class UserServiceTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, iae.getMessage());
+		tearDown();
 	}
 	
 	@Test
-	public void loginValidDetails() {
+	public void testLoginValidDetails() {
+		setUp();
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -77,10 +89,12 @@ public class UserServiceTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
+		tearDown();
 	}
 	
 	@Test
-	public void loginInvalidDetailsIncorrectPassword() {
+	public void testLoginInvalidDetailsIncorrectPassword() {
+		setUp();
 		// Arrange
 		String username = "bobby", password = "Codes123", wrongPassword = "Codes12";
 		String expected = "Invalid password supplied";
@@ -93,5 +107,6 @@ public class UserServiceTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, iae.getMessage());
+		tearDown();
 	}
 }
