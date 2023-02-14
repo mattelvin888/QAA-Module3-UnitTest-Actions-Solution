@@ -7,12 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 	
-	private Calculator calculator;
-
-	/*
-	Junit is not invoking the setUp and tearDown methods, so as a workaround
-	they are currently invoked manually at the start/end of each test.
-	*/
+	private Calculator calculator = new Calculator(); // Workaround for setUp/tearDown not being invoked
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -26,7 +21,6 @@ public class CalculatorTest {
 
 	@Test
 	public void testAddSmallNumbersTest() {
-		setUp();
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 30;
@@ -36,12 +30,10 @@ public class CalculatorTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
-		tearDown();
 	}
 	
 	@Test
 	public void testSubtractSmallNumbersTest() {
-		setUp();
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = -10;
@@ -51,12 +43,10 @@ public class CalculatorTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
-		tearDown();
 	}
 
 	@Test
 	public void testMultiplySmallNumbersTest() {
-		setUp();
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 200;
@@ -66,12 +56,10 @@ public class CalculatorTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
-		tearDown();
 	}
 	
 	@Test
 	public void testDivideSmallNumbersTest() {
-		setUp();
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 0.5;
@@ -81,7 +69,6 @@ public class CalculatorTest {
 		
 		// Assert
 		Assertions.assertEquals(expected, actual);
-		tearDown();
 	}
 	
 }
