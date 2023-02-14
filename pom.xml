@@ -12,10 +12,31 @@
 		<maven.compiler.release>11</maven.compiler.release>
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler.source>11</maven.compiler.source>
+		<!-- Added props -->
+		<maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
+    	<junit-5.version>5.2.0</junit-5.version>
 	</properties>
 
+	<plugin>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>${maven-surefire-plugin.version}</version>
+      <!-- JUnit 5 Support -->
+      <dependencies>
+        <dependency>
+          <groupId>org.junit.platform</groupId>
+          <artifactId>junit-platform-surefire-provider</artifactId>
+          <version>1.2.0</version>
+        </dependency>
+        <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-engine</artifactId>
+          <version>${junit-5.version}</version>
+        </dependency>
+      </dependencies>
+    </plugin>
+
 	<dependencies>
-	
+
 	<!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
 		<dependency>
 			<groupId>org.mockito</groupId>
@@ -36,7 +57,7 @@
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.9.1</version>
+			<version>${junit-5.version}</version>
 			<scope>test</scope>
 		</dependency>
 
