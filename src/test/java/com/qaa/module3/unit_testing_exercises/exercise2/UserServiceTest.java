@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 public class UserServiceTest {
 	
-	private UserService service = new UserService();
+	private UserService service;
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -22,7 +22,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void testRegisterValidDetails() {
+	public void registerValidDetails() {
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -35,7 +35,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	public void testRegisterInvalidPasswordNoNumbers() {
+	public void registerInvalidPasswordNoNumbers() {
 		// Arrange
 		String username = "bobby", password = "CodesAlot";
 		String expected = "Password must contain at least 1 number character";
@@ -51,7 +51,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	public void testRegisterInvalidPasswordNoUppercaseLetter() {
+	public void registerInvalidPasswordNoUppercaseLetter() {
 		// Arrange
 		String username = "bobby", password = "codes123";
 		String expected = "Password must contain at least 1 uppercase character";
@@ -66,7 +66,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	public void testLoginValidDetails() {
+	public void loginValidDetails() {
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -80,7 +80,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	public void testLoginInvalidDetailsIncorrectPassword() {
+	public void loginInvalidDetailsIncorrectPassword() {
 		// Arrange
 		String username = "bobby", password = "Codes123", wrongPassword = "Codes12";
 		String expected = "Invalid password supplied";
