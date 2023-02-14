@@ -15,12 +15,12 @@ public class CalculatorTest {
 	*/
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp() {
 		calculator = new Calculator();
 	}
 
 	@AfterEach
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		calculator = null;
 	}
 

@@ -17,12 +17,12 @@ public class UserServiceTest {
 	*/
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp() {
 		service = new UserService();
 	}
 
 	@AfterEach
-	public void tearDown() throws Exception {
+	public void tearDown() {
 		service = null;
 	}
 
