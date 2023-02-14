@@ -10,17 +10,17 @@ public class CalculatorTest {
 	private Calculator calculator;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		calculator = new Calculator();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		calculator = null;
 	}
 
 	@Test
-	void addSmallNumbersTest() {
+	public void addSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 30;
@@ -33,7 +33,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	void subtractSmallNumbersTest() {
+	public void subtractSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = -10;
@@ -46,7 +46,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	void multiplySmallNumbersTest() {
+	public void multiplySmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 200;
@@ -59,7 +59,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	void divideSmallNumbersTest() {
+	public void divideSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 0.5;

@@ -12,17 +12,17 @@ public class UserServiceTest {
 	private UserService service;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp() throws Exception {
 		service = new UserService();
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	public void tearDown() throws Exception {
 		service = null;
 	}
 
 	@Test
-	void registerValidDetails() {
+	public void registerValidDetails() {
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -35,7 +35,7 @@ public class UserServiceTest {
 	}
 
 	@Test
-	void registerInvalidPasswordNoNumbers() {
+	public void registerInvalidPasswordNoNumbers() {
 		// Arrange
 		String username = "bobby", password = "CodesAlot";
 		String expected = "Password must contain at least 1 number character";
@@ -51,7 +51,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	void registerInvalidPasswordNoUppercaseLetter() {
+	public void registerInvalidPasswordNoUppercaseLetter() {
 		// Arrange
 		String username = "bobby", password = "codes123";
 		String expected = "Password must contain at least 1 uppercase character";
@@ -66,7 +66,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	void loginValidDetails() {
+	public void loginValidDetails() {
 		// Arrange
 		String username = "bobby", password = "Codes123";
 		String expected = username;
@@ -80,7 +80,7 @@ public class UserServiceTest {
 	}
 	
 	@Test
-	void loginInvalidDetailsIncorrectPassword() {
+	public void loginInvalidDetailsIncorrectPassword() {
 		// Arrange
 		String username = "bobby", password = "Codes123", wrongPassword = "Codes12";
 		String expected = "Invalid password supplied";
