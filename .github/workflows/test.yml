@@ -18,6 +18,6 @@ jobs:
       #     distribution: 'temurin'
       - name: run tests
         run: |
-        sudo apt update
-        sudo apt install openjdk-11-jdk maven
-        mvn clean test
+          sudo apt update
+          sudo apt install openjdk-11-jdk maven
+          mvn clean test
