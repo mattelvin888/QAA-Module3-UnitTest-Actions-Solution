@@ -22,7 +22,7 @@ public class UserControllerTest {
 	private UserController userController;
 
 	@Test
-	public void registerValidDetailsTest() {
+	public void testRegisterValidDetailsTest() {
 		// Arrange
 		User user = new User(0, "Bobby", "Codes123");
 		User expected = new User(1, user.getUsername(), user.getPassword());
@@ -37,7 +37,7 @@ public class UserControllerTest {
 	}
 
 	@Test
-	public void loginValidDetailsTest() {
+	public void testLoginValidDetailsTest() {
 		// Arrange
 		User user = new User(0, "Bobby", "Codes123");
 		User expected = new User(1, user.getUsername(), user.getPassword());
