@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 public class CalculatorTest {
 	
 	private Calculator calculator;
+	calculator = new Calculator(); // Workaround for setUp/tearDown not being invoked
 
 	@BeforeEach
 	public void setUp() throws Exception {
