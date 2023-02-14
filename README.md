@@ -6,9 +6,13 @@ the java code provided using a Github Actions workflow.
 
 ## Workflow Structure
 The workflow follows the standard Github Actions workflow structure. After setting the name, the triggers are defined - in this case pushes 
-to the main branch and manual invocation will trigger the workflow. The workflow has one job, with three steps: first the repository is 
-checked out, the github actions java-setup module is used to configure a JDK installation, which includes maven, and then the unit tests are
-run via `maven clean test`
+to the main branch and manual invocation will trigger the workflow. The workflow has one job, with six steps:
+* The repository is checked out using actions/checkout
+* The JDK is configured, using actions/java-setup
+* Maven is used to run the unit tests, and the output of this is saved to a logfile
+* Maven is then used to package the compiled source code into a jar file
+* The test log and jar file are copied into an artifacts directory
+* The artifacts directory is saved as a build artifact using actions/upload-artifact
 
 ## Java Issues
 A few issues with the original reference solutions had to be overcome to run the tests using Actions:
