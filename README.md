@@ -1,8 +1,8 @@
 # QAA-Module3-UnitTest-Actions-Solution
 Solution for automating the unit tests provided using Github Actions  
 
-This repository builds upon the reference solutions for QAA-Module3-UnitTest-Exercises by automating the process of testing and building 
-the java code provided using a Github Actions workflow.
+This repository builds upon the [reference solutions for QAA-Module3-UnitTest-Exercises](https://github.com/MrWalshyType2/QAA-Module3-UnitTest-Exercise-Solutions) by automating the process of 
+testing and building the java code provided using a Github Actions workflow.
 
 ## Workflow Structure
 The workflow follows the standard Github Actions workflow structure. After setting the name, the triggers are defined - in this case pushes 
