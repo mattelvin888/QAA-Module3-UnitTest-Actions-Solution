@@ -20,7 +20,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void addSmallNumbersTest() {
+	public void testAddSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 30;
@@ -33,7 +33,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void subtractSmallNumbersTest() {
+	public void testSubtractSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = -10;
@@ -46,7 +46,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void multiplySmallNumbersTest() {
+	public void testMultiplySmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 200;
@@ -59,7 +59,7 @@ public class CalculatorTest {
 	}
 	
 	@Test
-	public void divideSmallNumbersTest() {
+	public void testDivideSmallNumbersTest() {
 		// Arrange
 		double num1 = 10, num2 = 20;
 		double expected = 0.5;
