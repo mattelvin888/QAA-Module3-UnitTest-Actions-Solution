@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: set up JDK
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'temurin'
+      # - name: set up JDK
+      #   uses: actions/setup-java@v3
+      #   with:
+      #     java-version: '11'
+      #     distribution: 'temurin'
       - name: run tests
-        run: mvn clean test
+        run: |
+        sudo apt update
+        sudo apt install openjdk-11-jdk maven
+        mvn clean test
